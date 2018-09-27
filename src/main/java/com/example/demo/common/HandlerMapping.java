@@ -31,6 +31,9 @@ public class HandlerMapping {
 					continue;
 				}
 				String path = rm.value();
+				if (!path.startsWith("/")) {
+					path = "/" + path;
+				}
 				handlerMap.put(path, new Handler(con, mh));
 			}
 		}
